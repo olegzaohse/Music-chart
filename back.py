@@ -8,6 +8,12 @@ vk.auth()
 values = {'out': 0, 'count': 100, 'time_offset': 60}
 num = '456239'
 vk.method('messages.get', values)
+def send_pic_r(user_id,s):
+		vk.method('messages.send', {'user_id': user_id, 'attachment': attachment})
+def random_pic():
+	track = random.randint(24,51)
+	pic_par= str(track)
+	return pic_par
 
 
 def w_mes(user_id, s):
@@ -16,6 +22,7 @@ def w_mes(user_id, s):
 
 def music_mes(user_id, attachment):
 	vk.method('messages.send', {'user_id': user_id, 'attachment': attachment})
+def get_test(user_id,s):
 
 
 def random_song():
@@ -41,8 +48,11 @@ while True:
 				  'Привет\n Меня зовут Music Chart bot\n Напиши (Инфо) если хочешь узнать мои возможности!')
 		elif response['items'][0]['body'] == ('Инфо'):
 			w_mes(item['user_id'],
-				  'Вы можете выбрать ключевые команды:\n (01) Музыкальный тест\n  (02) Случайная песня\n  (03) Песни по жанрам')
+				  'Вы можете выбрать ключевые команды:\n (01) Музыкальные альбомы\n  (02) Случайная песня\n  (03) Песни по жанрам')
 		elif response['items'][0]['body'] == '01':
+			random_pic()
+			send_pic_r(item['user_id'], 'photo' + my_id + '_' + num '0'+ pic_par)
+
 			
 		elif response['items'][0]['body'] == '02':
 			random_song()
