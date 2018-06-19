@@ -1,3 +1,4 @@
+###Здравствуте, код лежит только по жтой ссылке. Мы к вам подходили в день защиты. Мы отправили не ту ссылку в Canvas.
 import vk_api
 import time
 import random
@@ -46,8 +47,7 @@ while True:
 			w_mes(item['user_id'],
 				  'Вы можете выбрать ключевые команды:\n (01) Музыкальные альбомы\n  (02) Случайная песня\n  (03) Песни по жанрам')
 		elif response['items'][0]['body'] == '01':
-			random_pic()
-			music_mes(item['user_id'], 'photo' + my_id + '_' + num '0'+ str(random.randint(17,51)))
+			music_mes(item['user_id'], 'photo' + my_id + '_' + num + '0'+ str(random.randint(17,51)))
 
 			
 		elif response['items'][0]['body'] == '02':
